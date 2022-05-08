@@ -13,11 +13,10 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:horizontalSpacing="1.0px"
+        android:verticalSpacing="40dp"
         android:listSelector="#00FFFF"
         android:numColumns="7"
-        android:paddingBottom="30dp"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="1.0px"
         android:visibility="visible" />
 
 </FrameLayout>

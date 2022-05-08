@@ -12,12 +12,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.Calendar;
 /**은희야 있니? 보이니? 지금은 되니? Week...**/
 public class MainActivity extends AppCompatActivity {
     int isMonth = 1;
+    int year, month, date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(calendar.YEAR);
-        int month = calendar.get(calendar.MONTH);
+        year = calendar.get(calendar.YEAR);
+        month = calendar.get(calendar.MONTH);
         ViewPager2 vpPager = findViewById(R.id.vpPager);
         FragmentStateAdapter adapter = null;
         if(isMonth==1){ adapter = new MonthPagerAdapter(this, year, month); }
@@ -49,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         switch (item.getItemId()) {
             case R.id.action_monthCal:
                 if(isMonth != 1){
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("isMonth", 1);
                     startActivity(intent);
                     finish();
@@ -61,13 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_weekCal:
                 if(isMonth != 0) {
-                    intent.putExtra("isMonth", 0);
+                    Intent intent = new Intent(getApplicationContext(), WeekActivity.class);
+                    intent.putExtra("yearInfo", year);
+                    intent.putExtra("monthInfo", month);
+                    intent.putExtra("dateInfo", date);
                     startActivity(intent);
                     finish();
-                }
+                };
                 return true;
             default:
-                startActivity(new Intent(this,WeekActivity.class));
             return super.onOptionsItemSelected(item);
         }
     }

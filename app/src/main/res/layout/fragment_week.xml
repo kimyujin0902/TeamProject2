@@ -14,7 +14,7 @@
         android:layout_weight="1">
 
         <ListView
-            android:id="@+id/date"
+            android:id="@+id/weekDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numColumns="7"

@@ -10,11 +10,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 public class WeekActivity extends AppCompatActivity {
-
+    int year, month, date;
+    int isWeek = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_week);
+
+        Intent getIntent = getIntent();
+        month = getIntent.getIntExtra("monthInfo", 0);
+        year = getIntent.getIntExtra("yearInfo", 0);
+        date = getIntent.getIntExtra("datdInfo", 7);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -26,13 +32,17 @@ public class WeekActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         switch (item.getItemId()) {
             case R.id.action_monthCal:
-                startActivity(new Intent(this,MainActivity.class));
+                if(isWeek != 0) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("yearInfo", year);
+                    intent.putExtra("monthInfo", month);
+                    startActivity(new Intent(this,MainActivity.class));
+                    finish();
+                }
                 return true;
             case R.id.action_weekCal:
-                startActivity(new Intent(this,WeekActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
