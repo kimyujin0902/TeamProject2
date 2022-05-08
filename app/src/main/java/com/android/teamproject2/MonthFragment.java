@@ -69,12 +69,13 @@ public class MonthFragment extends Fragment {
         int startday = calendar.get(calendar.DAY_OF_WEEK);
         int daySize = lastday + startday - 1;
 
-        String[] days = new String[daySize];
+        String[] days = new String[42];
         for(int i=0; i<startday; i++)
             days[i] = "";
-
         for(int i=startday-1; i<daySize; i++)
             days[i] = "" + (i - startday + 2);
+        for(int i=daySize; i<42; i++)
+            days[i] = "";
 
         ArrayAdapter<String> adapt
                 = new ArrayAdapter<String>(

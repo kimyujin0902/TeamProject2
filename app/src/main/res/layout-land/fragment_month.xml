@@ -3,21 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MonthFragment"
-    android:background="@color/black">
+    tools:context=".MonthFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <GridView
         android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:horizontalSpacing="1.0px"
         android:listSelector="#00FFFF"
-        android:numColumns="7"
-        android:paddingBottom="30dp"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="1.0px"
-        android:visibility="visible" />
+        android:numColumns="7"/>
 
 </FrameLayout>
+
