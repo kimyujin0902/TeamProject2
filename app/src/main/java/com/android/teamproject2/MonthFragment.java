@@ -86,5 +86,20 @@ public class MonthFragment extends Fragment {
         GridView gridview = (GridView) rootview.findViewById(R.id.gridview);
         gridview.setAdapter(adapt);
         return rootview;
+
+/** 얘는 왜 안될까... 뭐가 문제일까...어렵다...
+         //클릭시 날짜 생성
+         gridview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+         public void onItemClick(AdapterView<?> parent, View v,
+         int p, long id) {
+         if(days[p]=="")
+         return;
+         Toast.makeText(MainActivity.this,
+         "" + myear + ". " + (mmonth+1) + ". " + days[p],
+         Toast.LENGTH_SHORT).show();
+         }
+         });
+ **/
+
     }
 }
