@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.Calendar;
-/**은희야 있니? 보이니? 지금은 되니?**/
+/**은희야 있니? 보이니? 지금은 되니? Week...**/
 public class MainActivity extends AppCompatActivity {
     int isMonth = 1;
     @Override
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPager2 vpPager = findViewById(R.id.vpPager);
         FragmentStateAdapter adapter = null;
         if(isMonth==1){ adapter = new MonthPagerAdapter(this, year, month); }
-        else { adapter = new WeekPagerAdapter(this); }
+        else { Log.i("hey", "else");} //adapter = new WeekPagerAdapter(this); }
         vpPager.setAdapter(adapter);
 
         vpPager.setCurrentItem(1);
