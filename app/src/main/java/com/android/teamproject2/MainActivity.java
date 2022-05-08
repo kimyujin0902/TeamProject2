@@ -49,13 +49,21 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         switch (item.getItemId()) {
             case R.id.action_monthCal:
-                intent.putExtra("isMonth", 1);
+                if(isMonth != 1){
+                    intent.putExtra("isMonth", 1);
+                    startActivity(intent);
+                    finish();
+                };
                 return true;
             case R.id.action_weekCal:
-                intent.putExtra("isMonth", 0);
+                if(isMonth != 0) {
+                    intent.putExtra("isMonth", 0);
+                    startActivity(intent);
+                    finish();
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
