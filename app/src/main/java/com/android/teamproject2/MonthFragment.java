@@ -13,11 +13,6 @@ import android.widget.GridView;
 
 import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MonthFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class MonthFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -66,16 +61,13 @@ public class MonthFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_month, container, false);
-        Log.i("hey", "ThisMonthFragment onCreateView");
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(myear, mmonth,1);
-        Log.i("hey", "Set: "+myear+", This month: "+mmonth);
 
         int lastday = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
         int startday = calendar.get(calendar.DAY_OF_WEEK);
         int daySize = lastday + startday - 1;
-        Log.i("hey", "lday: "+lastday+", sday: "+startday+", daySize: "+daySize);
 
         String[] days = new String[daySize];
         for(int i=0; i<startday; i++)

@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(calendar.YEAR);
         int month = calendar.get(calendar.MONTH);
-        Log.i("hey", "Calendar: "+year+", This month: "+month);
         ViewPager2 vpPager = findViewById(R.id.vpPager);
         FragmentStateAdapter adapter = null;
         if(isMonth){ adapter = new MonthPagerAdapter(this, year, month); }
