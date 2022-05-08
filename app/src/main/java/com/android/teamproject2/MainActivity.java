@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.Calendar;
-/**은희야 있니? 보이니?**/
+/**은희야 있니? 보이니? 지금은 되니?**/
 public class MainActivity extends AppCompatActivity {
     boolean isMonth = true;
     @Override
