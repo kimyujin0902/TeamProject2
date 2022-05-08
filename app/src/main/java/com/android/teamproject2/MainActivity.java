@@ -1,5 +1,6 @@
 package com.android.teamproject2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.PagerAdapter;
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
             }
         });
+
+        ActionBar ab = getSupportActionBar();
+        ab.setTitle(year+"년"+(month+1)+"월");
 
     }
     public boolean onCreateOptionsMenu(Menu menu) {

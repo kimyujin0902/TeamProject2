@@ -1,5 +1,6 @@
 package com.android.teamproject2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -24,6 +25,9 @@ public class WeekActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        ActionBar ab = getSupportActionBar();
+        ab.setTitle(year+"년"+(month+1)+"월");
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

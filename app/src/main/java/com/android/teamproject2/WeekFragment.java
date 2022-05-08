@@ -82,4 +82,23 @@ public class WeekFragment extends Fragment {
         listView.setAdapter(adapt);
         return inflater.inflate(R.layout.fragment_week, container, false);
     }
+
+/** 이게 어디로 들어가야할까... <= 주간 시간표 (0~24시)
+     // 데이터 원본 준비
+     String[] items = new String[24];
+     for(int j = 0; i<25; j++)
+     items[j] = j;
+
+     //어댑터 준비 (배열 객체 이용, simple_list_item_1 리소스 사용
+     ArrayAdapter<String> adapt
+     = new ArrayAdapter<String>(
+     this,
+     android.R.layout.simple_list_item_1,
+     items);
+     //어댑터 연결
+     ListView list = (ListView) findViewById(R.id.Time);
+     list.setAdapter(adapt);
+
+ **/
+
 }
