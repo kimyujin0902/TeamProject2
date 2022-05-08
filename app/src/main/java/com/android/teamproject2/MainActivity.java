@@ -52,13 +52,23 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         switch (item.getItemId()) {
             case R.id.action_monthCal:
+                if(isMonth != 1){
+                    intent.putExtra("isMonth", 1);
+                    startActivity(intent);
+                    finish();
+                };
                 startActivity(new Intent(this,MainActivity.class));
                 return true;
             case R.id.action_weekCal:
-                startActivity(new Intent(this,WeekActivity.class));
+                if(isMonth != 0) {
+                    intent.putExtra("isMonth", 0);
+                    startActivity(intent);
+                    finish();
+                }
                 return true;
             default:
-                return super.onOptionsItemSelected(item);
+                startActivity(new Intent(this,WeekActivity.class));
+            return super.onOptionsItemSelected(item);
         }
     }
 }
