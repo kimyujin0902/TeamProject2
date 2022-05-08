@@ -52,18 +52,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         switch (item.getItemId()) {
             case R.id.action_monthCal:
-                if(isMonth != 1){
-                    intent.putExtra("isMonth", 1);
-                    startActivity(intent);
-                    finish();
-                };
+                startActivity(new Intent(this,MainActivity.class));
                 return true;
             case R.id.action_weekCal:
-                if(isMonth != 0) {
-                    intent.putExtra("isMonth", 0);
-                    startActivity(intent);
-                    finish();
-                }
+                startActivity(new Intent(this,WeekActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
